@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 
-import './screens/home_screen.dart';
-import './screens/login_screen.dart';
-import './screens/registration_screen.dart';
+import './screens/welcome_screen.dart';
+import './utilities/constants.dart';
 
-void main() {
-  runApp(const TournamentApp());
-}
+void main() => runApp(TournamentApp());
 
 class TournamentApp extends StatelessWidget {
-  const TournamentApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeScreen.id,
-      routes: {
-        HomeScreen.id: (context) => const HomeScreen(),
-        LoginScreen.id: (context) => const LoginScreen(),
-        RegistrationScreen.id: (context) => const RegistrationScreen(),
-      },
+      title: 'Turnuva',
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: WelcomeScreen(),
     );
   }
 }
